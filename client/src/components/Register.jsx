@@ -145,7 +145,7 @@ export default function Register() {
           password: password,
         };
         await axios({
-          url: "http://localhost:5000/user/add",
+          url: "https://react-nest-auth.herokuapp.com/user/add",
           method: "POST",
           data: data,
         })

@@ -11,7 +11,9 @@ import { MulterModule } from '@nestjs/platform-express';
   imports: [
     UserModule,
     AuthModule,
-    MongooseModule.forRoot('mongodb://localhost/nestjs'),
+    MongooseModule.forRoot(
+      'mongodb+srv://AreebGhani:areebghani22112003@cluster0.bessokw.mongodb.net/?retryWrites=true&w=majoritycluster0.bessokw.mongodb.net/?retryWrites=true&w=majority',
+    ),
     ProfileModule,
     MulterModule.register({ dest: './uploads' }),
   ],

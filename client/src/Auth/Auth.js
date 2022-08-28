@@ -4,7 +4,7 @@ export default async function Auth() {
   if (localStorage.getItem("Token")) {
     const Token = JSON.parse(localStorage.getItem("Token"));
     await axios({
-      url: "http://localhost:5000/profile",
+      url: "https://react-nest-auth.herokuapp.com/profile",
       method: "GET",
       headers: {
         Authorization: `Bearer ${Token}`,
@@ -17,7 +17,7 @@ export default async function Auth() {
           password: user.password,
         };
         axios({
-          url: "http://localhost:5000/auth/login",
+          url: "https://react-nest-auth.herokuapp.com/auth/login",
           method: "POST",
           data: credentials,
         })

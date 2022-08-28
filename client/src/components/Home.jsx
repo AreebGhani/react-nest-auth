@@ -12,7 +12,7 @@ export default function Home() {
   const fetchUsers = async () => {
     try {
       const { data } = await axios({
-        url: "http://localhost:5000/user",
+        url: "https://react-nest-auth.herokuapp.com/user",
         method: "GET",
       });
       if (!data.users) {
@@ -45,7 +45,13 @@ export default function Home() {
         </div>
         <div className="mt-4 row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 g-4">
           {users.length === 0 ? (
-            <div>{load === "loading" ? <Loader /> : { load }}</div>
+            <div>
+              {load === "loading" ? (
+                <Loader />
+              ) : (
+                <h2 className="text-capitalize">{load}.</h2>
+              )}
+            </div>
           ) : (
             users.map((user, index) => {
               return (
@@ -54,7 +60,7 @@ export default function Home() {
                     <img
                       src={
                         user.img !== ""
-                          ? `http://localhost:5000/user/img/${user._id}`
+                          ? `https://react-nest-auth.herokuapp.com/user/img/${user._id}`
                           : userImg
                       }
                       className="card-img-top"

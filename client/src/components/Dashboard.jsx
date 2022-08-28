@@ -181,7 +181,7 @@ export default function Dashboard() {
             img: img,
           };
           await axios({
-            url: `http://localhost:5000/user/update/${user._id}`,
+            url: `https://react-nest-auth.herokuapp.com/user/update/${user._id}`,
             method: "PATCH",
             headers: {
               accept: "application/json",
@@ -280,7 +280,7 @@ export default function Dashboard() {
                 <img
                   src={
                     user.img !== ""
-                      ? `http://localhost:5000/user/img/${user._id}`
+                      ? `https://react-nest-auth.herokuapp.com/user/img/${user._id}`
                       : userImg
                   }
                   className="rounded-circle mt-5"

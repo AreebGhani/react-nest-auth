@@ -22,7 +22,7 @@ AppModule = __decorate([
         imports: [
             user_module_1.UserModule,
             auth_module_1.AuthModule,
-            mongoose_1.MongooseModule.forRoot('mongodb://localhost/nestjs'),
+            mongoose_1.MongooseModule.forRoot('mongodb+srv://AreebGhani:areebghani22112003@cluster0.bessokw.mongodb.net/?retryWrites=true&w=majoritycluster0.bessokw.mongodb.net/?retryWrites=true&w=majority'),
             profile_module_1.ProfileModule,
             platform_express_1.MulterModule.register({ dest: './uploads' }),
         ],
